@@ -1,7 +1,6 @@
 import { Selector, t } from 'testcafe'
 
 class Home {
-
 	btnStayOnThisSite: Selector
 	inputSearchbox: Selector
 
@@ -10,11 +9,11 @@ class Home {
 		this.inputSearchbox = Selector('#search')
 	}
 
-    async searchCustomText(t, categoryName) {
+	async searchCustomText(t, categoryName) {
 		await t
-		.click(this.inputSearchbox)
-		.typeText(this.inputSearchbox, categoryName)
-		.pressKey('Enter')
+			.click(this.inputSearchbox)
+			.typeText(this.inputSearchbox, categoryName)
+			.pressKey('Enter')
 	}
 }
 

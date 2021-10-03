@@ -1,0 +1,32 @@
+{
+    "name": "frontend-demo-testcafe",
+    "version": "1.0.0",
+    "description": "Automated testing with TestCafe",
+    "main": "index.js",
+    "scripts": {
+        "test:chrome": "testcafe chrome e2e/tests/ -s --screenshots",
+        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ -s --screenshots",
+        "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 e2e/tests/ -s --screenshots",
+        "test:safari": "testcafe safari e2e/tests/ -s --screenshots",
+        "test:firefox": "testcafe firefox e2e/tests/ -s --screenshots"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/strumphu/frontend-demo-testcafe.git"
+    },
+    "keywords": [
+        "TestCafe",
+        "Testing",
+        "Automation"
+    ],
+    "author": "Daniel Kontos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/strumphu/frontend-demo-testcafe/issues"
+    },
+    "homepage": "https://github.com/strumphu/frontend-demo-testcafe#readme",
+    "dependencies": {
+        "prettier": "^2.4.1",
+        "testcafe": "^1.16.0"
+    }
+}
