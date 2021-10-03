@@ -1,12 +1,12 @@
 class Url {
 	baseUrl: string
 	home: string
-    cart: string
+	cart: string
 
 	constructor() {
 		this.baseUrl = 'https://www.burton.com'
-        this.home = this.baseUrl + '/us/en/home'
-        this.cart = this.baseUrl + '/us/en/cart'
+		this.home = this.baseUrl + '/us/en/home'
+		this.cart = this.baseUrl + '/us/en/cart'
 	}
 }
 
