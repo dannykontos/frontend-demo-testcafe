@@ -42,8 +42,8 @@ A small test framework that tests the following on Burton.com:
 
 6. Run alias from package.json, "scripts" section:
 
-   'npm run test:chrome' alias for "testcafe chrome ./tests --screenshots",
-   'npm run test:chrome:headless' alias for "testcafe chrome:headless ./tests --screenshots",
-   'npm run test:chrome:mobile' alias for "testcafe chrome:emulation:device=iphone 12 ./tests --screenshots",
-   'npm run test:safari' alias for "testcafe safari ./tests --screenshots",
-   'npm run test:firefox' alias for "testcafe firefox ./tests --screenshots"
+   'npm run test:chrome' alias for "testcafe chrome e2e/tests/ -s --screenshots",
+   'npm run test:chrome:headless' alias for "testcafe chrome:headless e2e/tests -s --screenshots",
+   'npm run test:chrome:mobile' alias for "testcafe chrome:emulation:device=iphone 12 e2e/tests -s --screenshots",
+   'npm run test:safari' alias for "testcafe safari e2e/tests -s --screenshots",
+   'npm run test:firefox' alias for "testcafe firefox e2e/tests -s --screenshots"

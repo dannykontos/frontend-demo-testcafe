@@ -4,11 +4,11 @@
     "description": "Automated testing with TestCafe",
     "main": "index.js",
     "scripts": {
-        "test:chrome": "testcafe chrome ./tests --screenshots",
-        "test:chrome:headless": "testcafe chrome:headless ./tests --screenshots",
-        "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 ./tests --screenshots",
-        "test:safari": "testcafe safari ./tests --screenshots",
-        "test:firefox": "testcafe firefox ./tests --screenshots"
+        "test:chrome": "testcafe chrome e2e/tests/ -s --screenshots",
+        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ -s --screenshots",
+        "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 e2e/tests/ -s --screenshots",
+        "test:safari": "testcafe safari e2e/tests/ -s --screenshots",
+        "test:firefox": "testcafe firefox e2e/tests/ -s --screenshots"
     },
     "repository": {
         "type": "git",
