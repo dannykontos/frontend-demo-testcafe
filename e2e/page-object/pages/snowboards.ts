@@ -1,11 +1,14 @@
 import { Selector, t } from 'testcafe'
 
 class Snowboards {
-	btnArrayProducts: Selector
+	btnArrayOfProducts: Selector
 
 	constructor() {
-		this.btnArrayProducts = Selector('.product-image-picture')
+		this.btnArrayOfProducts = Selector('.product-image-picture')
+	}
+
+	async selectCustomProduct(t, index) {
+		await t.click(this.btnArrayOfProducts.nth(index))
 	}
 }
-
 export default new Snowboards()

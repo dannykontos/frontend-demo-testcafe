@@ -10,5 +10,9 @@ class Header {
 		this.txtButtonLabel = 'BURTON'
 		this.txtCartCount = Selector('.js-amount')
 	}
+	async checkCartValue(t, count) {
+		await t.expect(this.txtCartCount.innerText).eql(String(count))
+	}
 }
+
 export default new Header()

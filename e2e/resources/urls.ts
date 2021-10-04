@@ -8,6 +8,10 @@ class Url {
 		this.home = this.baseUrl + '/us/en/home'
 		this.cart = this.baseUrl + '/us/en/cart'
 	}
+
+	async navigateToCart(t) {
+		await t.navigateTo(this.cart)
+	}
 }
 
 export default new Url()

@@ -19,6 +19,10 @@ A small test framework that tests the following on Burton.com:
 
    Run: `npm install -g testcafe`
 
+3. **Install** [testcafe-reporter-html](https://www.npmjs.com/package/testcafe-reporter-html) for reports:
+
+   Run: `npm install testcafe-reporter-html`
+
 ### Running a test
 
 1. Open a terminal
@@ -42,8 +46,8 @@ A small test framework that tests the following on Burton.com:
 
 6. Run alias from package.json, "scripts" section:
 
-   'npm run test:chrome' alias for "testcafe chrome e2e/tests/ -s --screenshots",
-   'npm run test:chrome:headless' alias for "testcafe chrome:headless e2e/tests -s --screenshots",
-   'npm run test:chrome:mobile' alias for "testcafe chrome:emulation:device=iphone 12 e2e/tests -s --screenshots",
-   'npm run test:safari' alias for "testcafe safari e2e/tests -s --screenshots",
-   'npm run test:firefox' alias for "testcafe firefox e2e/tests -s --screenshots"
+   'npm run test:chrome' alias for "testcafe chrome e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+   'npm run test:chrome:headless' alias for "testcafe chrome:headless e2e/tests --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+   'npm run test:chrome:mobile' alias for "testcafe chrome:emulation:device=iphone 12 e2e/tests --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+   'npm run test:safari' alias for "testcafe safari e2e/tests --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+   'npm run test:firefox' alias for "testcafe firefox e2e/tests --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html"
