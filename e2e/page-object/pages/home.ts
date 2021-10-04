@@ -1,4 +1,5 @@
 import { Selector, t } from 'testcafe'
+import Header from '../components/header'
 
 class Home {
 	btnStayOnThisSite: Selector
@@ -14,6 +15,13 @@ class Home {
 			.click(this.inputSearchbox)
 			.typeText(this.inputSearchbox, categoryName)
 			.pressKey('Enter')
+	}
+
+	async stayOnPageOk(t) {
+		await t
+			.expect(Header.btnBurton.innerText)
+			.eql(Header.txtButtonLabel)
+			.click(this.btnStayOnThisSite)
 	}
 }
 

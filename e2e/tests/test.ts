@@ -5,32 +5,58 @@ import ProductDetails from '../page-object/pages/productDetails'
 import Header from '../page-object/components/header'
 import Cart from '../page-object/pages/cart'
 
-fixture`Tests for Burton Cart`.page`${Urls.home}`
+fixture`Tests for Burton.com Cart`.page`${Urls.home}`
 
 const productName = 'snowboard'
 
-test('Flow to Add and remove products from the cart', async t => {
-	await t
-		.expect(Header.btnBurton.innerText)
-		.eql(Header.txtButtonLabel)
-		.click(Home.btnStayOnThisSite)
-	//Verify that first product is added in the cart
+test('Add a product to cart', async t => {
+	Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
-	await t.click(Snowboards.btnArrayProducts.nth(0))
-	await t
-		.click(ProductDetails.btnAddToCart.nth(1))
-		.click(ProductDetails.btnContinueShopingInModal)
-		.expect(Header.txtCartCount.innerText)
-		.eql('1')
-	//Verify that a new product is added in the cart
+	Snowboards.selectCustomProduct(t, 0)
+	ProductDetails.addProductToCart(t)
+	await t.expect(Header.txtCartCount.innerText).eql(String(1))
+})
+
+test('Add second product to cart', async t => {
+	Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
-	await t
-		.click(Snowboards.btnArrayProducts.nth(2))
-		.click(ProductDetails.btnAddToCart.nth(1))
-		.click(ProductDetails.btnContinueShopingInModal)
-		.expect(Header.txtCartCount.innerText)
-		.eql('2')
-	//Verify that user is able to remove item from cart
+	Snowboards.selectCustomProduct(t, 0)
+	ProductDetails.addProductToCart(t)
+	Header.checkCartValue(t, 1)
+	Home.searchCustomText(t, productName)
+	Snowboards.selectCustomProduct(t, 2)
+	ProductDetails.addProductToCart(t)
+	await t.expect(Header.txtCartCount.innerText).eql(String(2))
+})
+
+test('Remove second product from cart', async t => {
+	Home.stayOnPageOk(t)
+	Home.searchCustomText(t, productName)
+	Snowboards.selectCustomProduct(t, 0)
+	ProductDetails.addProductToCart(t)
+	Header.checkCartValue(t, 1)
+	Home.searchCustomText(t, productName)
+	Snowboards.selectCustomProduct(t, 2)
+	ProductDetails.addProductToCart(t)
+	Header.checkCartValue(t, 2)
+	Urls.navigateToCart(t)
+	Cart.deleteCustomProduct(t, 0)
+	await t.expect(Cart.btnArrayDeleteItem.count).eql(1)
+})
+
+test('Empty cart', async t => {
+	Home.stayOnPageOk(t)
+	Home.searchCustomText(t, productName)
+	Snowboards.selectCustomProduct(t, 0)
+	ProductDetails.addProductToCart(t)
+	Header.checkCartValue(t, 1)
+	Home.searchCustomText(t, productName)
+	Snowboards.selectCustomProduct(t, 2)
+	ProductDetails.addProductToCart(t)
+	Header.checkCartValue(t, 2)
+	//Urls.navigateToCart(t)
+	//Cart.deleteCustomProduct(t, 0)
+	//Cart.deleteCustomProduct(t, 0)
 	await t
 		.navigateTo(Urls.cart)
 		.click(Cart.btnArrayDeleteItem.nth(0))
@@ -41,5 +67,8 @@ test('Flow to Add and remove products from the cart', async t => {
 		.navigateTo(Urls.cart)
 		.click(Cart.btnArrayDeleteItem.nth(0))
 		.expect(Cart.btnArrayDeleteItem.count)
-		.eql(1)
+		.eql(
+			1,
+			'Custom Error: The user is trying to find a product in an empty cart!'
+		)
 })

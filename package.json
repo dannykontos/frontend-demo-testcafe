@@ -4,11 +4,11 @@
     "description": "Automated testing with TestCafe",
     "main": "index.js",
     "scripts": {
-        "test:chrome": "testcafe chrome e2e/tests/ -s --screenshots",
-        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ -s --screenshots",
-        "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 e2e/tests/ -s --screenshots",
-        "test:safari": "testcafe safari e2e/tests/ -s --screenshots",
-        "test:firefox": "testcafe firefox e2e/tests/ -s --screenshots"
+        "test:chrome": "testcafe chrome e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+        "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+        "test:safari": "testcafe safari e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
+        "test:firefox": "testcafe firefox e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html"
     },
     "repository": {
         "type": "git",
@@ -27,6 +27,7 @@
     "homepage": "https://github.com/strumphu/frontend-demo-testcafe#readme",
     "dependencies": {
         "prettier": "^2.4.1",
-        "testcafe": "^1.16.0"
+        "testcafe": "^1.16.0",
+        "testcafe-reporter-html": "^1.4.6"
     }
 }

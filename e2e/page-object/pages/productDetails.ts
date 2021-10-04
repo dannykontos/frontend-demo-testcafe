@@ -11,6 +11,11 @@ class ProductDetails {
 		)
 		this.btnContinueShopingInModal = Selector('.btn-secondary')
 	}
+	async addProductToCart(t) {
+		await t
+			.click(this.btnAddToCart.nth(1))
+			.click(this.btnContinueShopingInModal)
+	}
 }
 
 export default new ProductDetails()
