@@ -8,3 +8,5 @@ jobs:
       - run: ls -la
       - name: Check out the repository
         uses: actions/checkout@v1
+      - run: cd /home/runner/work/frontend-demo-testcafe/frontend-demo-testcafe
+      - run: ls -la
