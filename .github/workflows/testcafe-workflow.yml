@@ -3,8 +3,8 @@ on: [push]
 jobs:
 	tests:
 		name: Run TestCafe Tets 
-		runs-on:ubuntu-latest
+		runs-on: ubuntu-latest
 		steps:
-			-name: Check out the repository
-			- run npm install
+			- name: Check out the repository
+			- run: npm install
 
