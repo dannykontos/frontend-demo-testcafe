@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: npm install
+      - run: ls -la
       - run: npm run e2eHeadless
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1.6
