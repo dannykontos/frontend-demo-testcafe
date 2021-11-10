@@ -5,7 +5,6 @@ jobs:
     name: Run TestCafe Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
       - run: npm install
       - run: npm run e2eHeadless
       - name: Publish Unit Test Results
