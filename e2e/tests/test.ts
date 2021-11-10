@@ -10,15 +10,15 @@ fixture`Tests for Burton.com Cart`.page`${Urls.home}`
 const productName = 'snowboard'
 
 test('Add a product to cart', async t => {
-	Home.stayOnPageOk(t)
+	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
 	ProductDetails.addProductToCart(t)
-	await t.expect(Header.txtCartCount.innerText).eql(String(1))
+	await t.debug().expect(Header.txtCartCount.innerText).eql('1')
 })
 
 test('Add second product to cart', async t => {
-	Home.stayOnPageOk(t)
+	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
 	ProductDetails.addProductToCart(t)
@@ -30,7 +30,7 @@ test('Add second product to cart', async t => {
 })
 
 test('Remove second product from cart', async t => {
-	Home.stayOnPageOk(t)
+	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
 	ProductDetails.addProductToCart(t)
@@ -45,7 +45,7 @@ test('Remove second product from cart', async t => {
 })
 
 test('Empty cart', async t => {
-	Home.stayOnPageOk(t)
+	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
 	ProductDetails.addProductToCart(t)
