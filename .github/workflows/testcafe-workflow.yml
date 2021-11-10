@@ -1,0 +1,10 @@
+name: End-to-End Tests
+on: [push]
+jobs:
+	tests:
+		name: Run TestCafe Tets 
+		runs-on:ubuntu-latest
+		steps:
+			-name: Check out the repository
+			- run npm install
+
