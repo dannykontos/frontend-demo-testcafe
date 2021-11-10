@@ -6,3 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls -la
+      - name: Check out the repository
+        uses: actions/checkout@v1
