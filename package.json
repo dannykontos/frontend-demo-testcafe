@@ -27,7 +27,7 @@
     "homepage": "https://github.com/strumphu/frontend-demo-testcafe#readme",
     "dependencies": {
         "prettier": "^2.4.1",
-        "testcafe": "^1.16.0",
+        "testcafe": "^1.17.1",
         "testcafe-reporter-html": "^1.4.6"
     }
 }

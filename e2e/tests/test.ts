@@ -11,10 +11,11 @@ const productName = 'snowboard'
 
 test('Add a product to cart', async t => {
 	//Home.stayOnPageOk(t)
-	Home.searchCustomText(t, productName)
+	Home.homePage.searchCustomText(productName)
 	Snowboards.selectCustomProduct(t, 0)
 	ProductDetails.addProductToCart(t)
-	//await t.debug().expect(Header.txtCartCount.innerText).eql('1')
+	await t.expect(Header.txtCartCount.innerText).eql(String(1)),
+		'The product was not added to the cart'
 })
 
 test('Add second product to cart', async t => {

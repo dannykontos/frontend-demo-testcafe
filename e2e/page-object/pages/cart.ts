@@ -1,6 +1,12 @@
 import { Selector, t } from 'testcafe'
 
 class Cart {
+
+    readonly detailPage = {
+        addToCartButton: Selector('.item-x-button'),
+        navtoCartButton: Selector('.item-x-button')
+    }
+
 	btnArrayDeleteItem: Selector
 
 	constructor() {
