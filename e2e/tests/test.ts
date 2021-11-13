@@ -18,7 +18,7 @@ test('Add a product to cart', async t => {
 		'The product was not added to the cart'
 })
 
-test.skip('Add second product to cart', async t => {
+test('Add second product to cart', async t => {
 	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
@@ -30,7 +30,7 @@ test.skip('Add second product to cart', async t => {
 	await t.expect(Header.txtCartCount.innerText).eql(String(2))
 })
 
-test.skip('Remove second product from cart', async t => {
+test('Remove second product from cart', async t => {
 	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
@@ -45,7 +45,7 @@ test.skip('Remove second product from cart', async t => {
 	await t.expect(Cart.btnArrayDeleteItem.count).eql(1)
 })
 
-test.skip('Empty cart', async t => {
+test('Empty cart', async t => {
 	//Home.stayOnPageOk(t)
 	Home.searchCustomText(t, productName)
 	Snowboards.selectCustomProduct(t, 0)
