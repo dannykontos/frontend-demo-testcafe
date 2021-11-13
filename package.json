@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test:chrome": "testcafe chrome e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
-        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ --screenshots-full-page --screenshots-on-fails -r spec,xunit:report.xml",
+        "test:chrome:headless": "testcafe chrome:headless e2e/tests/ --screenshots-full-page --screenshots-on-fails -r spec,xunit:reports/report.xml",
         "test:chrome:mobile": "testcafe chrome:emulation:device=iphone 12 e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
         "test:safari": "testcafe safari e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html",
         "test:firefox": "testcafe firefox e2e/tests/ --screenshots-full-page --screenshots-on-fails --reporter spec,html:reports/TestcafeReport.html"

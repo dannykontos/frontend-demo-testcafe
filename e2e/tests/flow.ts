@@ -9,7 +9,7 @@ fixture`Tests for Burton Cart`.page`${Urls.home}`
 
 const productName = 'snowboard'
 
-test('Flow to Add and remove products from the cart', async t => {
+test.skip('Flow to Add and remove products from the cart', async t => {
 	//await t
 		//.expect(Header.btnBurton.innerText)
 		//.eql(Header.txtButtonLabel)
