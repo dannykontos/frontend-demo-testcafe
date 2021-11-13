@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite name="TestCafe Tests: Chrome 95.0.4638.69 / macOS 10.15.7" tests="4" failures="1" skipped="0" errors="1" time="176.883" timestamp="Sat, 13 Nov 2021 09:50:13 GMT" >
+  <testcase classname="Tests for Burton.com Cart" name="Add a product to cart" time="24.771">
+  </testcase>
+  <testcase classname="Tests for Burton.com Cart" name="Add second product to cart" time="40.882">
+  </testcase>
+  <testcase classname="Tests for Burton.com Cart" name="Remove second product from cart" time="50.899">
+  </testcase>
+  <testcase classname="Tests for Burton.com Cart" name="Empty cart" time="60.288">
+    <failure>
+    <![CDATA[
+      1) AssertionError: Custom Error: The user is trying to find a product in an empty cart!:
+      expected 0 to deeply equal 1
+
+         + expected - actual
+
+         -0
+         +1
+
+
+         Browser: Chrome 95.0.4638.69 / macOS 10.15.7
+
+            66 |    //Verify that user is able to remove last item from cart
+            67 |	await t
+            68 |		.navigateTo(Urls.cart)
+            69 |		.click(Cart.btnArrayDeleteItem.nth(0))
+            70 |		.expect(Cart.btnArrayDeleteItem.count)
+          > 71 |		.eql(
+            72 |			1,
+            73 |			'Custom Error: The user is trying to find a product in an empty cart!'
+            74 |		)
+            75 |})
+            76 |
+
+            at <anonymous>
+      (/Users/daniel.kontos/Documents/Playground/frontend-demo-testcafe/e2e/tests/test.ts:71:4)
+            at fulfilled
+      (/Users/daniel.kontos/Documents/Playground/frontend-demo-testcafe/e2e/tests/test.ts:5:58)
+    ]]>
+    </failure>
+  </testcase>
+</testsuite>
